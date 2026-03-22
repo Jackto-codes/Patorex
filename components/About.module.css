@@ -1,0 +1,386 @@
+/* ── About wrapper for smooth section-to-section blend ─────────── */
+.aboutSection {
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(180deg, #ffffff 0%, #ecf4ff 62%, #d8e7ff 100%);
+}
+
+/* ── Section: full-width two-column split ───────────── */
+.about {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-height: 620px;
+	overflow: hidden;
+	position: relative;
+}
+
+.about::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: linear-gradient(
+		90deg,
+		rgba(59, 130, 246, 0) 0%,
+		rgba(59, 130, 246, 0.35) 50%,
+		rgba(59, 130, 246, 0) 100%
+	);
+	z-index: 3;
+	pointer-events: none;
+}
+
+/* ── LEFT — image column ────────────────────────────── */
+.imageCol {
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(180deg, #dbe9ff 0%, #eff5ff 100%);
+}
+
+/* decorative circles tuned to Hero palette */
+.blobPurple {
+	position: absolute;
+	top: -60px;
+	left: -60px;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: var(--primary-light);
+	opacity: 0.85;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.blobOrange {
+	position: absolute;
+	top: -40px;
+	right: -40px;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	background: var(--primary-lighter);
+	opacity: 0.9;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.photo {
+	object-fit: contain;
+	object-position: center;
+	z-index: 1;
+	border-radius: inherit;
+}
+
+/* ── RIGHT — light panel that blends with Hero ───────── */
+.textCol {
+	background: linear-gradient(180deg, #f8fbff 0%, #ecf4ff 100%);
+	border-left: 1px solid rgba(59, 130, 246, 0.14);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 72px 64px;
+	gap: 0;
+}
+
+.title {
+	font-size: 58px;
+	font-weight: 800;
+	color: var(--text-900);
+	line-height: 1.1;
+	margin-bottom: 12px;
+	letter-spacing: -0.03em;
+}
+
+.titleAccent {
+	display: block;
+	width: 56px;
+	height: 4px;
+	background: var(--primary);
+	border-radius: 4px;
+	margin-bottom: 28px;
+}
+
+.body {
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 1.85;
+	color: var(--text-700);
+	margin-bottom: 22px;
+	letter-spacing: 0.01em;
+}
+
+.bodyClosing {
+	font-size: 20px;
+	font-weight: 800;
+	color: var(--primary);
+	letter-spacing: 0.02em;
+	margin-bottom: 28px;
+	line-height: 1.4;
+}
+
+.ctaBtn {
+	display: inline-block;
+	margin-top: 12px;
+	padding: 16px 36px;
+	background: var(--primary);
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 800;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 50px;
+	align-self: flex-start;
+	transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.ctaBtn:hover {
+	background: var(--primary-dark);
+	transform: translateY(-2px);
+	box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35);
+}
+
+/* ── Mini campaign carousel under About ────────────────────────── */
+.campaignStrip {
+	padding: 34px 24px 68px;
+	background:
+		radial-gradient(circle at 8% 12%, rgba(14, 165, 233, 0.24), transparent 42%),
+		radial-gradient(circle at 88% 18%, rgba(251, 191, 36, 0.28), transparent 44%),
+		linear-gradient(180deg, rgba(236, 244, 255, 0.95) 0%, rgba(199, 223, 255, 0.95) 100%);
+	border-top: 1px solid rgba(59, 130, 246, 0.22);
+}
+
+.campaignHead {
+	max-width: 860px;
+	margin: 0 auto 20px;
+	text-align: center;
+}
+
+.campaignTitle {
+	margin: 0;
+	font-size: 30px;
+	font-weight: 800;
+	letter-spacing: -0.02em;
+	color: var(--text-900);
+}
+
+.campaignSub {
+	margin: 8px 0 0;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+	color: rgba(30, 41, 59, 0.72);
+}
+
+.carouselCard {
+	position: relative;
+	max-width: 780px;
+	aspect-ratio: 16 / 8.5;
+	margin: 0 auto;
+	border-radius: 20px;
+	padding: 12px;
+	background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.18));
+	box-shadow:
+		0 16px 40px rgba(16, 24, 40, 0.18),
+		inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.slide {
+	position: absolute;
+	inset: 12px;
+	border-radius: 14px;
+	overflow: hidden;
+	background: linear-gradient(180deg, #f7fbff 0%, #e5efff 100%);
+	opacity: 0;
+	transform: translateY(4px);
+	transition: opacity 0.55s ease, transform 0.55s ease;
+	pointer-events: none;
+}
+
+.slideActive {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.slideImage {
+	object-fit: contain;
+	object-position: center;
+	transition: filter 0.35s ease;
+	filter: saturate(1.05) contrast(1.03);
+}
+
+.slide:hover .slideImage {
+	filter: saturate(1.12) contrast(1.06);
+}
+
+.slideOverlay {
+	position: absolute;
+	inset: 0;
+	background:
+		linear-gradient(120deg, rgba(37, 99, 235, 0.32) 0%, rgba(15, 23, 42, 0.12) 48%, rgba(249, 115, 22, 0.22) 100%),
+		linear-gradient(180deg, rgba(15, 23, 42, 0) 52%, rgba(15, 23, 42, 0.55) 100%);
+	pointer-events: none;
+}
+
+.slideLabel {
+	position: absolute;
+	left: 18px;
+	bottom: 16px;
+	padding: 9px 14px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #f8fbff;
+	background: rgba(15, 23, 42, 0.54);
+	border: 1px solid rgba(255, 255, 255, 0.32);
+	backdrop-filter: blur(3px);
+}
+
+.slideDots {
+	position: absolute;
+	left: 50%;
+	bottom: -28px;
+	transform: translateX(-50%);
+	display: inline-flex;
+	gap: 10px;
+}
+
+.dot {
+	width: 11px;
+	height: 11px;
+	border-radius: 999px;
+	border: 0;
+	padding: 0;
+	background: rgba(37, 99, 235, 0.32);
+	cursor: pointer;
+	transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dot:hover {
+	transform: translateY(-1px) scale(1.08);
+	background: rgba(37, 99, 235, 0.55);
+}
+
+.dotActive {
+	background: linear-gradient(140deg, #3b82f6, #0ea5e9);
+	box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+	transform: scale(1.16);
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 900px) {
+	.aboutSection {
+		background: linear-gradient(180deg, #ffffff 0%, #edf5ff 58%, #deebff 100%);
+	}
+
+	.about {
+		grid-template-columns: 1fr;
+	}
+
+	/* card with blue border on mobile */
+	.imageCol {
+		width: calc(100% - 32px);
+		aspect-ratio: 4 / 3;
+		margin: 24px 16px 0;
+		border-radius: 16px;
+		border: 2.5px solid var(--primary-light);
+		box-shadow:
+			0 0 0 5px rgba(59, 130, 246, 0.1),
+			0 8px 32px rgba(59, 130, 246, 0.18);
+	}
+
+	.blobPurple {
+		top: -40px;
+		left: -40px;
+		width: 130px;
+		height: 130px;
+	}
+
+	.blobOrange {
+		top: -30px;
+		right: -30px;
+		width: 110px;
+		height: 110px;
+	}
+
+	.textCol {
+		padding: 56px 32px;
+	}
+
+	.title {
+		font-size: 46px;
+	}
+
+	.campaignStrip {
+		padding: 30px 16px 62px;
+	}
+
+	.campaignTitle {
+		font-size: 24px;
+	}
+
+	.carouselCard {
+		aspect-ratio: 16 / 10;
+		border-radius: 16px;
+	}
+
+	.slide {
+		inset: 10px;
+	}
+
+	.slideDots {
+		bottom: -24px;
+	}
+}
+
+@media (max-width: 480px) {
+	.textCol {
+		padding: 48px 24px;
+	}
+
+	.title {
+		font-size: 36px;
+	}
+
+	.body {
+		font-size: 16px;
+	}
+
+	.campaignStrip {
+		padding: 26px 12px 56px;
+	}
+
+	.campaignTitle {
+		font-size: 21px;
+	}
+
+	.campaignSub {
+		font-size: 13px;
+	}
+
+	.carouselCard {
+		aspect-ratio: 4 / 3;
+		border-radius: 13px;
+		padding: 8px;
+	}
+
+	.slide {
+		inset: 8px;
+		border-radius: 10px;
+	}
+
+	.slideLabel {
+		left: 12px;
+		bottom: 12px;
+		padding: 8px 12px;
+		font-size: 11px;
+	}
+
+	.slideDots {
+		bottom: -20px;
+	}
+}

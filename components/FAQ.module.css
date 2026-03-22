@@ -1,0 +1,139 @@
+.faq {
+  padding: 120px 20px;
+  background: var(--bg-secondary);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionLabel {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--primary-blue);
+  color: white;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.subtitle {
+  font-size: 20px;
+  color: var(--text-secondary);
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faqItem {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.3s ease;
+}
+
+.faqItem:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.faqQuestion {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.faqQuestion:hover {
+  color: var(--primary-blue);
+}
+
+.faqQuestion span {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: var(--text-muted);
+  transition: transform 0.3s ease, color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faqItem.open .icon {
+  transform: rotate(180deg);
+  color: var(--primary-blue);
+}
+
+.faqAnswer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faqItem.open .faqAnswer {
+  max-height: 500px;
+  padding: 0 28px 24px 28px;
+}
+
+.faqAnswer p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .faq {
+    padding: 80px 20px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .faqQuestion {
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  .faqItem.open .faqAnswer {
+    padding: 0 20px 20px 20px;
+  }
+
+  .faqAnswer p {
+    font-size: 15px;
+  }
+}

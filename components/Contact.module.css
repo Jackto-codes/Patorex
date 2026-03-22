@@ -1,0 +1,511 @@
+/* ── Section shell ──────────────────────────────────── */
+.contact {
+  padding: 120px 20px 0;
+  background: #f9fafb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+/* ── Section header ─────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionLabel {
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text-900);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: var(--text-600);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ── Two-column layout ──────────────────────────────── */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ── LEFT COLUMN ────────────────────────────────────── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.helpTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-900);
+}
+
+.helpList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.helpItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text-700);
+  line-height: 1.55;
+}
+
+.helpBullet {
+  color: var(--primary);
+  font-size: 11px;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+.helpCta {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-900);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── Social links ───────────────────────────────────── */
+.socialSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.socialTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-900);
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.socialCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  border: 1px solid var(--border-gray);
+  transition: all 0.25s ease;
+}
+
+.socialCard:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.socialIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eff6ff;
+  color: var(--primary);
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.socialInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.socialName {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-900);
+}
+
+.socialHandle {
+  font-size: 13px;
+  color: var(--text-500);
+}
+
+/* ── RIGHT COLUMN — Consultation form ───────────────── */
+.formWrapper {
+  background: linear-gradient(145deg, var(--brand-ink) 0%, #1f3f91 100%);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.formHeader {
+  padding: 32px 36px 0;
+}
+
+.formTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.formSubtitle {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.form {
+  padding: 24px 36px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formGroup {
+  margin-bottom: 18px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffd8b8;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.required {
+  color: var(--brand-accent);
+  margin-left: 2px;
+}
+
+.fieldHint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text-900);
+  background: #ffffff;
+  transition: box-shadow 0.2s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #9ca3af;
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitBtn {
+  align-self: flex-start;
+  margin-top: 4px;
+  padding: 13px 44px;
+  background: var(--brand-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+}
+
+.submitBtn:hover {
+  background: #ea6b0d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.35);
+}
+
+.footer {
+  background: var(--brand-ink);
+  color: white;
+  padding: 60px 20px 20px;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footerLogo {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.footerTagline {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 350px;
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.footerColumn h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.footerColumn a {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.footerColumn a:hover {
+  color: white;
+}
+
+.footerBottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footerBottom p {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footerContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 80px 20px 0;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  .formHeader {
+    padding: 24px 24px 0;
+  }
+
+  .form {
+    padding: 18px 24px 28px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .footerLinks {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.footerContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  gap: 4rem;
+  margin-bottom: 3rem;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footerLogo {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoMain {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: white;
+}
+
+.logoSub {
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: -4px;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.footerLinks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.linkGroup h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.linkGroup a {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.linkGroup a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.footerBottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem 2rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footerBottom p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 968px) {
+  .contact {
+    padding: 5rem 0 0;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 0 2rem 4rem;
+  }
+
+  .footerContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footerLinks {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem 3rem;
+  }
+
+  .form {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footerContent {
+    padding: 0 1rem;
+  }
+
+  .footerBottom {
+    padding: 2rem 1rem 0;
+  }
+}
