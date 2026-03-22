@@ -115,10 +115,9 @@ export default function Contact() {
               <p className={styles.formSubtitle}>Tell us about your business and we&apos;ll prepare a tailored strategy session.</p>
             </div>
 
-            {/* Replace the action URL with your Formspree endpoint when ready */}
             <form
               className={styles.form}
-              action="https://formspree.io/f/YOUR_FORM_ID"
+              action="https://formspree.io/f/xgonbpgp"
               method="POST"
             >
               <div className={styles.formRow}>
@@ -187,8 +186,7 @@ export default function Contact() {
             <div className={styles.footerColumn}>
               <h4>Product</h4>
               <a href="#services">Features</a>
-              <a href="#pricing">Pricing</a>
-              <a href="#about">How it Works</a>
+              <a href="#works">How it Works</a>
             </div>
 
             <div className={styles.footerColumn}>
@@ -201,7 +199,7 @@ export default function Contact() {
             <div className={styles.footerColumn}>
               <h4>Resources</h4>
               <a href="#faq">FAQ</a>
-              <a href="#works">Use Cases</a>
+              <a href="#works">Successful Campaigns</a>
               <a href="#contact">Support</a>
             </div>
           </div>

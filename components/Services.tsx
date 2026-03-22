@@ -9,6 +9,8 @@ type ServiceItem = {
   subtitle: string
   details: string[]
   bullets?: string[]
+  featured?: boolean
+  featuredLabel?: string
 }
 
 function ServiceIcon({ icon }: { icon: string }) {
@@ -102,20 +104,26 @@ export default function Services() {
   const services: ServiceItem[] = [
     {
       icon: 'growth',
-      title: 'Growth Marketing Services',
+      title: 'Billboard Advertising',
       subtitle:
-        'Our Growth Marketing Service Package utilizes multiple digital marketing tactics and platforms to create awareness for your brand, engage with prospects and customers, generate leads and nurture them to become customers.',
+        'Put your brand in front of thousands daily with strategic billboard placements that build visibility, trust and top-of-mind awareness in high-traffic locations.',
       details: [
-        'Our strategy combines channel planning, audience targeting and campaign optimization to move prospects from first contact to loyal customer.',
+        'We plan billboard campaigns around your audience movement patterns, selecting premium routes and hotspots where your message gets maximum exposure.',
+        'From concept and copy to design adaptation, print specifications and placement coordination, we handle end-to-end execution for a bold outdoor presence.',
+        'You get clear campaign timelines, placement proof, and performance-focused recommendations so every board supports your brand and sales goals.',
       ],
     },
     {
       icon: 'leads',
-      title: 'Lead Generation Projects',
+      title: 'Web3 Solutions',
+      featured: true,
+      featuredLabel: 'New Service',
       subtitle:
-        'Looking to generate leads for your business? We can help. Our lead generation service focuses on identifying your ideal target audience and creating lead magnets to attract them to your business.',
+        'Launch future-ready digital products with Web3 strategy, blockchain integration and user experiences designed for trust, transparency and scalable growth.',
       details: [
-        'We design lead funnels that capture attention, qualify intent, and convert interest into measurable business opportunities.',
+        'We help brands and startups translate Web3 ideas into practical products, from token utility planning and wallet-enabled experiences to community-led growth models.',
+        'Our team supports your roadmap across architecture guidance, smart contract collaboration, user journey design and go-to-market communication for technical and non-technical audiences.',
+        'Whether you are building an NFT platform, DAO ecosystem or blockchain-powered service, we shape clear positioning and adoption strategies that reduce friction and increase confidence.',
       ],
     },
     {
@@ -260,8 +268,12 @@ export default function Services() {
 
         <div className={styles.grid}>
           {services.map((service, index) => (
-            <article key={service.title + index} className={styles.serviceCard}>
-              <div className={styles.cardGlow} aria-hidden="true" />
+            <article
+              key={service.title + index}
+              className={`${styles.serviceCard} ${service.featured ? styles.featuredCard : ''}`}
+            >
+              {service.featured && <span className={styles.featuredTag}>{service.featuredLabel || 'New'}</span>}
+              <div className={`${styles.cardGlow} ${service.featured ? styles.featuredGlow : ''}`} aria-hidden="true" />
               <div className={styles.cardHeader}>
                 <div className={styles.cardTopRow}>
                   <span className={styles.serviceIcon}>
@@ -276,7 +288,7 @@ export default function Services() {
               <button
                 type="button"
                 onClick={() => toggleCard(index)}
-                className={styles.readMoreBtn}
+                className={`${styles.readMoreBtn} ${service.featured ? styles.readMoreBtnFeatured : ''}`}
                 aria-expanded={openCard === index}
                 aria-controls={`service-content-${index}`}
               >
