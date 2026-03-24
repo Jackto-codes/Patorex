@@ -6,7 +6,7 @@ import styles from './Pricing.module.css'
 export default function Pricing() {
   const fullTitle = "Let's Build Something Great Together!"
   const fullSubtitle =
-    "Have a project in mind or need a professional website in Nigeria? Reach out today and let's create a strategy that drives results."
+    "Have a project in mind or need a professional Consultaion in Nigeria? Reach out today and let's create a strategy that drives results."
 
   const [typedTitle, setTypedTitle] = useState('')
   const [typedSubtitle, setTypedSubtitle] = useState('')

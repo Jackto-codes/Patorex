@@ -314,7 +314,7 @@ export default function Services() {
                     </ul>
                   )}
 
-                  <a href="#contact" className={styles.consultBtn}>
+                  <a href="https://wa.me/2349022093554" target="_blank" rel="noopener noreferrer" className={styles.consultBtn}>
                     Book a Consultation
                   </a>
                 </div>
