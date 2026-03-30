@@ -1,5 +1,6 @@
 'use client'
 
+import { FormEvent, useState } from 'react'
 import styles from './Contact.module.css'
 
 const socialLinks = [
@@ -58,6 +59,41 @@ const helpPoints = [
 ]
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+
+    if (isSubmitting) {
+      return
+    }
+
+    setIsSubmitting(true)
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        form.reset()
+        window.location.href = 'https://wa.me/2349022093554'
+        return
+      }
+    } catch {
+      // Keep users on the page when network submission fails.
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
   return (
     <section id="contact" className={styles.contact}>
       <div className={styles.container}>
@@ -119,6 +155,7 @@ export default function Contact() {
               className={styles.form}
               action="https://formspree.io/f/xgonbpgp"
               method="POST"
+              onSubmit={handleSubmit}
             >
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
@@ -164,8 +201,8 @@ export default function Contact() {
                 <textarea id="helpWith" name="helpWith" rows={4} placeholder="Describe your goals..." />
               </div>
 
-              <button type="submit" className={styles.submitBtn}>
-                Submit
+              <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit'}
               </button>
             </form>
           </div>
