@@ -84,7 +84,8 @@ export default function Contact() {
 
       if (response.ok) {
         form.reset()
-        window.location.href = 'https://wa.me/2349022093554'
+        const whatsappMessage = encodeURIComponent('Hello Patorex, I just submitted the consultation form and i would like to make more enquires')
+        window.location.href = `https://wa.me/2349022093554?text=${whatsappMessage}`
         return
       }
     } catch {
