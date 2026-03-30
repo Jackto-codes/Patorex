@@ -21,6 +21,11 @@
   --bg-gray-50: #f7f9fc;
   --bg-gray-100: #eef3fb;
   --bg-gray-200: #dbe4f1;
+
+  /* Shared section gradients */
+  --section-glow-left: rgba(56, 189, 248, 0.1);
+  --section-glow-right: rgba(37, 99, 235, 0.12);
+  --section-gradient: linear-gradient(180deg, #f4f9ff 0%, #edf5ff 48%, #f8fbff 100%);
   
   /* Text Colors */
   --text-900: #172554;

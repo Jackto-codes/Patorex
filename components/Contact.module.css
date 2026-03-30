@@ -278,16 +278,17 @@
 .footer {
   background: var(--brand-ink);
   color: white;
-  padding: 60px 20px 20px;
+  padding: 60px 0 20px;
 }
 
 .footerContainer {
-  max-width: 1200px;
+  max-width: 1240px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: 60px;
-  padding-bottom: 40px;
+  padding: 0 clamp(16px, 3vw, 32px) 40px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -330,9 +331,10 @@
 }
 
 .footerBottom {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1240px;
   margin: 0 auto;
-  padding-top: 20px;
+  padding: 20px clamp(16px, 3vw, 32px) 0;
   text-align: center;
 }
 
@@ -385,7 +387,7 @@
   }
 
   .footer {
-    padding: 48px 20px 18px;
+    padding: 48px 0 18px;
   }
 
   .footerContainer {
@@ -427,7 +429,7 @@
   }
 
   .footer {
-    padding: 40px 16px 14px;
+    padding: 40px 0 14px;
   }
 
   .footerContainer {

@@ -93,7 +93,10 @@ export default function Pricing() {
 
           <div className={`${styles.actions} ${revealClass} ${styles.delay3}`}>
             <a href="#contact" className={styles.contactBtn}>Contact Us</a>
-            <a href="#hero" className={styles.backToTop}>Back to Top</a>
+            <div className={styles.contactNumbers}>
+              <a href="tel:09022093554" className={styles.contactNumber}>09022093554</a>
+              <a href="tel:09061904253" className={styles.contactNumber}>09061904253</a>
+            </div>
           </div>
         </div>
       </div>
