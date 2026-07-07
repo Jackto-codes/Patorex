@@ -5,9 +5,9 @@ export const metadata: Metadata = {
   title: 'Patorex & Associates | Results that resonate',
   description: 'Premier marketing agency delivering innovative strategies and creative excellence. Transform your brand with our comprehensive digital marketing solutions.',
   icons: {
-    icon: '/Patorex logo.jpg',
-    shortcut: '/Patorex logo.jpg',
-    apple: '/Patorex logo.jpg',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/logo.jpg',
   },
 }
 

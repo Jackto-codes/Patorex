@@ -6,8 +6,8 @@ import styles from './Contact.module.css'
 const socialLinks = [
   {
     name: 'X (Twitter)',
-    handle: '@Patorex97',
-    url: 'https://www.x.com/@Patorex97',
+    handle: '@Patorexagency',
+    url: 'https://x.com/Patorexagency',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z" />
@@ -16,8 +16,8 @@ const socialLinks = [
   },
   {
     name: 'Instagram',
-    handle: '@pato.rex997',
-    url: 'https://www.instagram.com/pato.rex997',
+    handle: '@Patorexagency',
+    url: 'https://instagram.com/Patorexagency/',
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069ZM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0Zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881Z" />
@@ -72,26 +72,23 @@ export default function Contact() {
 
     const form = event.currentTarget
     const formData = new FormData(form)
+    const whatsappMessage = encodeURIComponent('Hello Patorex, I just submitted the consultation form and i would like to make more enquires')
+    const whatsappUrl = `https://wa.me/15813364553?text=${whatsappMessage}`
 
     try {
-      const response = await fetch(form.action, {
+      await fetch(form.action, {
         method: form.method,
         body: formData,
         headers: {
           Accept: 'application/json',
         },
       })
-
-      if (response.ok) {
-        form.reset()
-        const whatsappMessage = encodeURIComponent('Hello Patorex, I just submitted the consultation form and i would like to make more enquires')
-        window.location.href = `https://wa.me/2349022093554?text=${whatsappMessage}`
-        return
-      }
     } catch {
-      // Keep users on the page when network submission fails.
+      // Ignore network errors so the redirect still happens
     } finally {
+      form.reset()
       setIsSubmitting(false)
+      window.location.href = whatsappUrl
     }
   }
 
@@ -121,6 +118,18 @@ export default function Contact() {
             <p className={styles.helpCta}>
               If you are looking to achieve any of the objectives listed above, then book a free consultation and let&apos;s x-ray your business together.
             </p>
+
+            <a
+              href="https://wa.me/15813364553"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.whatsappBtn}
+            >
+              <svg className={styles.whatsappIcon} viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.588 1.455 5.416 1.456 5.4 0 9.794-4.394 9.797-9.794.002-2.617-1.015-5.078-2.867-6.93C17.06 2.031 14.603 1.014 12.003 1.014c-5.402 0-9.797 4.394-9.8 9.796-.001 1.942.508 3.841 1.472 5.51l-.965 3.525 3.616-.95c1.62.88 3.428 1.34 5.32 1.34zm10.963-7.447c-.3-.15-1.77-.874-2.046-.975-.276-.101-.476-.15-.676.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.795-1.49-1.77-1.665-2.07-.175-.3-.018-.462.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.63-1.012-2.18-.328-.79-.66-.68-.905-.69-.23-.01-.495-.012-.76-.012-.267 0-.7.1-1.067.497-.367.397-1.4 1.368-1.4 3.336 0 1.968 1.433 3.868 1.633 4.135.2.266 2.82 4.307 6.83 6.04 2.124.917 3.01 1.066 3.992.92.57-.085 1.77-.724 2.02-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z" />
+              </svg>
+              Contact us on WhatsApp
+            </a>
 
             <div className={styles.socialSection}>
               <h4 className={styles.socialTitle}>Follow Us</h4>
@@ -215,7 +224,7 @@ export default function Contact() {
           <div className={styles.footerBrand}>
             <div className={styles.footerLogo}>PATOREX</div>
             <p className={styles.footerTagline}>
-              Smart marketing solutions designed to help businesses grow and thrive. 
+              Smart marketing solutions designed to help businesses grow and thrive.
               Built with ❤️ for ambitious brands.
             </p>
           </div>

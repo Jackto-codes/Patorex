@@ -128,6 +128,15 @@
   color: #0b2a8f;
 }
 
+.whatsappNumber {
+  transition: all 0.25s ease;
+}
+
+.whatsappNumber:hover {
+  color: #25d366 !important;
+  text-shadow: 0 0 8px rgba(37, 211, 102, 0.25);
+}
+
 .preReveal {
   opacity: 0;
   transform: translateY(26px);

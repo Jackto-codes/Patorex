@@ -93,6 +93,15 @@ function ServiceIcon({ icon }: { icon: string }) {
           <path d="M15 12h.01" />
         </svg>
       )
+    case 'management':
+      return (
+        <svg {...commonProps}>
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="9" y1="9" x2="15" y2="9" />
+          <line x1="9" y1="13" x2="15" y2="13" />
+          <line x1="9" y1="17" x2="15" y2="17" />
+        </svg>
+      )
     default:
       return null
   }
@@ -102,6 +111,24 @@ export default function Services() {
   const [openCard, setOpenCard] = useState<number | null>(0)
 
   const services: ServiceItem[] = [
+    {
+      icon: 'management',
+      title: 'Project Management',
+      subtitle:
+        'Keep your marketing campaigns on track, on time, and on budget with structured project coordination, resource management, and campaign execution.',
+      details: [
+        'We manage all aspects of your marketing projects, establishing clear timelines, milestones, and deliverables to keep creative and technical teams aligned.',
+        'From coordinating cross-functional campaigns to tracking resource allocation and campaign launch schedules, we eliminate friction and keep execution seamless.',
+        'You receive regular progress updates, comprehensive reports, and proactive solutions to ensure your marketing campaigns launch smoothly and drive results.',
+      ],
+      bullets: [
+        'Campaign Planning & Scheduling',
+        'Resource & Vendor Management',
+        'Milestone Tracking',
+        'Cross-functional Collaboration',
+        'Performance Reporting',
+      ],
+    },
     {
       icon: 'growth',
       title: 'Billboard Advertising',
@@ -312,7 +339,7 @@ export default function Services() {
                     </ul>
                   )}
 
-                  <a href="https://wa.me/2349022093554" target="_blank" rel="noopener noreferrer" className={styles.consultBtn}>
+                  <a href="https://wa.me/15813364553" target="_blank" rel="noopener noreferrer" className={styles.consultBtn}>
                     Book a Consultation
                   </a>
                 </div>

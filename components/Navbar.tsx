@@ -41,7 +41,7 @@ export default function Navbar() {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/pato.rex997"
+              href="https://instagram.com/Patorexagency/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit our Instagram page"
@@ -63,7 +63,7 @@ export default function Navbar() {
               </svg>
             </a>
             <a
-              href="https://www.x.com/@Patorex97"
+              href="https://x.com/Patorexagency"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit our X page"
@@ -80,12 +80,18 @@ export default function Navbar() {
       <div className={styles.container}>
         <div className={styles.logo} onClick={() => scrollToSection('hero')}>
           <div className={styles.logoIcon}>
-            <span className={styles.iconP}>P</span>
+            <Image
+              src="/logo.jpg"
+              alt="Patorex Logo"
+              width={42}
+              height={42}
+              className={styles.logoImg}
+            />
           </div>
           <span className={styles.logoText}>Patorex</span>
         </div>
 
-        <button 
+        <button
           className={styles.mobileToggle}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
