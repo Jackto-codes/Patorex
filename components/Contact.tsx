@@ -119,17 +119,30 @@ export default function Contact() {
               If you are looking to achieve any of the objectives listed above, then book a free consultation and let&apos;s x-ray your business together.
             </p>
 
-            <a
-              href="https://wa.me/15813364553"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.whatsappBtn}
-            >
-              <svg className={styles.whatsappIcon} viewBox="0 0 24 24">
-                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.588 1.455 5.416 1.456 5.4 0 9.794-4.394 9.797-9.794.002-2.617-1.015-5.078-2.867-6.93C17.06 2.031 14.603 1.014 12.003 1.014c-5.402 0-9.797 4.394-9.8 9.796-.001 1.942.508 3.841 1.472 5.51l-.965 3.525 3.616-.95c1.62.88 3.428 1.34 5.32 1.34zm10.963-7.447c-.3-.15-1.77-.874-2.046-.975-.276-.101-.476-.15-.676.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.795-1.49-1.77-1.665-2.07-.175-.3-.018-.462.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.63-1.012-2.18-.328-.79-.66-.68-.905-.69-.23-.01-.495-.012-.76-.012-.267 0-.7.1-1.067.497-.367.397-1.4 1.368-1.4 3.336 0 1.968 1.433 3.868 1.633 4.135.2.266 2.82 4.307 6.83 6.04 2.124.917 3.01 1.066 3.992.92.57-.085 1.77-.724 2.02-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z" />
-              </svg>
-              Contact us on WhatsApp
-            </a>
+            <div className={styles.contactButtonsRow}>
+              <a
+                href="https://wa.me/15813364553"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.whatsappBtn}
+              >
+                <svg className={styles.whatsappIcon} viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.588 1.455 5.416 1.456 5.4 0 9.794-4.394 9.797-9.794.002-2.617-1.015-5.078-2.867-6.93C17.06 2.031 14.603 1.014 12.003 1.014c-5.402 0-9.797 4.394-9.8 9.796-.001 1.942.508 3.841 1.472 5.51l-.965 3.525 3.616-.95c1.62.88 3.428 1.34 5.32 1.34zm10.963-7.447c-.3-.15-1.77-.874-2.046-.975-.276-.101-.476-.15-.676.15-.2.3-.775.975-.95 1.175-.175.2-.35.225-.65.075-.3-.15-1.265-.467-2.41-1.485-.89-.795-1.49-1.77-1.665-2.07-.175-.3-.018-.462.13-.61.135-.133.3-.35.45-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.63-1.012-2.18-.328-.79-.66-.68-.905-.69-.23-.01-.495-.012-.76-.012-.267 0-.7.1-1.067.497-.367.397-1.4 1.368-1.4 3.336 0 1.968 1.433 3.868 1.633 4.135.2.266 2.82 4.307 6.83 6.04 2.124.917 3.01 1.066 3.992.92.57-.085 1.77-.724 2.02-1.425.25-.7.25-1.3.175-1.425-.075-.125-.275-.2-.575-.35z" />
+                </svg>
+                Contact us on WhatsApp
+              </a>
+
+              <a
+                href="mailto:officialpatorex@gmail.com"
+                className={styles.emailBtn}
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="20" height="20">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+                officialpatorex@gmail.com
+              </a>
+            </div>
 
             <div className={styles.socialSection}>
               <h4 className={styles.socialTitle}>Follow Us</h4>
@@ -158,7 +171,12 @@ export default function Contact() {
           <div className={styles.formWrapper}>
             <div className={styles.formHeader}>
               <h3 className={styles.formTitle}>Book a Free Consultation</h3>
-              <p className={styles.formSubtitle}>Tell us about your business and we&apos;ll prepare a tailored strategy session.</p>
+              <p className={styles.formSubtitle}>
+                Tell us about your business or email us directly at{' '}
+                <a href="mailto:officialpatorex@gmail.com" className={styles.formEmailLink}>
+                  officialpatorex@gmail.com
+                </a>.
+              </p>
             </div>
 
             <form
@@ -206,9 +224,36 @@ export default function Contact() {
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="helpWith">What do you need help with?</label>
-                <p className={styles.fieldHint}>Share your marketing expectations with us so we can better prepare for the meeting.</p>
-                <textarea id="helpWith" name="helpWith" rows={4} placeholder="Describe your goals..." />
+                <label htmlFor="primaryGoal">
+                  Primary Business Goal<span className={styles.required}>*</span>
+                </label>
+                <select id="primaryGoal" name="primaryGoal" required className={styles.selectInput}>
+                  <option value="">Select Primary Business Goal...</option>
+                  <option value="Generate More Leads">Generate More Qualified Leads & Pipeline</option>
+                  <option value="Fix Sales Conversion & Leakage">Fix Sales Conversion & Plug Revenue Leakage</option>
+                  <option value="Retain Existing Clients">Retain Existing Clients & Maximize LTV</option>
+                  <option value="Audit Wasted Spend">Audit & Cut Wasted Ad Spend</option>
+                  <option value="Web3 & PM">Web3 Services & Specialized Project Management</option>
+                </select>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label htmlFor="monthlyBudget">
+                  Monthly Growth / Marketing Budget<span className={styles.required}>*</span>
+                </label>
+                <select id="monthlyBudget" name="monthlyBudget" required className={styles.selectInput}>
+                  <option value="">Select Monthly Marketing Budget...</option>
+                  <option value="Under ₦500,000 (Starter)">Under ₦500,000 / month (Starter Tier)</option>
+                  <option value="₦500,000 – ₦2,000,000 (Growth)">₦500,000 – ₦2,000,000 / month (Growth Tier)</option>
+                  <option value="₦2,000,000 – ₦5,000,000 (Scale)">₦2,000,000 – ₦5,000,000 / month (Scale Tier)</option>
+                  <option value="₦5,000,000+ (Enterprise)">₦5,000,000+ / month (Enterprise Infrastructure)</option>
+                </select>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label htmlFor="helpWith">Share Additional Details / Bottlenecks</label>
+                <p className={styles.fieldHint}>Share your marketing expectations so we can better prepare for your strategy session.</p>
+                <textarea id="helpWith" name="helpWith" rows={4} placeholder="Describe your current business challenge..." />
               </div>
 
               <button type="submit" className={styles.submitBtn} disabled={isSubmitting}>
@@ -241,13 +286,14 @@ export default function Contact() {
               <a href="#about">About</a>
               <a href="#testimonials">Testimonials</a>
               <a href="#contact">Contact</a>
+              <a href="mailto:officialpatorex@gmail.com">E-mail Us</a>
             </div>
 
             <div className={styles.footerColumn}>
               <h4>Resources</h4>
               <a href="#faq">FAQ</a>
               <a href="#works">Successful Campaigns</a>
-              <a href="#contact">Support</a>
+              <a href="mailto:officialpatorex@gmail.com">officialpatorex@gmail.com</a>
             </div>
           </div>
         </div>

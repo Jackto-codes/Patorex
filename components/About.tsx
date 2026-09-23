@@ -46,23 +46,24 @@ export default function About() {
           </h2>
           <span className={styles.titleAccent} aria-hidden="true" />
           <p className={styles.body}>
-            In a world saturated with noise, Patorex &amp; Associates is the signal. We are a
-            full-service marketing agency dedicated to amplifying the voices of bold
-            businesses and visionary brands. Founded on the principle that strategy and
-            creativity must coexist, we bridge the gap between data-driven insight and
-            compelling storytelling.
+            In a world saturated with noise and vanity metrics, Patorex &amp; Associates is the revenue signal. We are a premier revenue infrastructure and growth consultancy dedicated to amplifying the profitability of bold businesses and visionary brands. Founded on the principle that strategy, accounting discipline, and creative execution must coexist, we bridge the gap between financial intelligence and marketing performance.
           </p>
           <p className={styles.body}>
-            We do not just create campaigns; we engineer brand experiences. Whether it is
-            dominating digital landscapes, crafting unforgettable visual identities, or
-            converting clicks into loyal customers, our approach is rooted in precision and
-            powered by passion. At Patorex &amp; Associates, we view ourselves not just as an
-            agency, but as a growth partner invested in your success and obsessed with your
-            results.
+            Most agencies stop at likes, clicks, and impressions. We tie your marketing metrics directly to gross margins, Customer Acquisition Cost (CAC), Customer Lifetime Value (LTV), and bottom-line cash flow. Built on professional financial and audit expertise, we do not just run ads—we engineer predictable revenue systems that protect cash flow and scale market share.
           </p>
           <p className={styles.bodyClosing}>
-            We are Patorex &amp; Associates.
+            We are Patorex &amp; Associates—Engineered for Measurable ROI.
           </p>
+          <div className={styles.emailContainer}>
+            <span className={styles.emailLabel}>Official Contact Email:</span>
+            <a href="mailto:officialpatorex@gmail.com" className={styles.emailLink}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="18" height="18">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+              officialpatorex@gmail.com
+            </a>
+          </div>
           <a href="#contact" className={styles.ctaBtn}>
             BOOK A CONSULTATION
           </a>

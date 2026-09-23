@@ -28,6 +28,13 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.topBar}>
         <div className={styles.topBarContent}>
+          <a href="mailto:officialpatorex@gmail.com" className={styles.topBarEmail}>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            officialpatorex@gmail.com
+          </a>
           <div className={styles.socialLinks}>
             <a
               href="https://www.facebook.com/officialpatorex"
@@ -103,9 +110,10 @@ export default function Navbar() {
 
         <ul className={`${styles.navLinks} ${mobileMenuOpen ? styles.mobileOpen : ''}`}>
           <li><button onClick={() => scrollToSection('about')}>About us</button></li>
+          <li><button onClick={() => scrollToSection('services')}>Engines</button></li>
+          <li><button onClick={() => scrollToSection('audits')}>Audits</button></li>
+          <li><button onClick={() => scrollToSection('pricing')}>Packages</button></li>
           <li><button onClick={() => scrollToSection('contact')}>Contact us</button></li>
-          <li><button onClick={() => scrollToSection('works')}>Our works</button></li>
-          <li><button onClick={() => scrollToSection('services')}>What we do</button></li>
           <li className={styles.authButtons}>
             <button onClick={() => scrollToSection('contact')} className={styles.ctaButton}>
               Get Started

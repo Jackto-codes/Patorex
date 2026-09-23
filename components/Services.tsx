@@ -3,17 +3,20 @@
 import { useState } from 'react'
 import styles from './Services.module.css'
 
-type ServiceItem = {
-  icon: string
+type EngineItem = {
+  id: string
+  number: string
   title: string
-  subtitle: string
-  details: string[]
-  bullets?: string[]
-  featured?: boolean
-  featuredLabel?: string
+  tagline: string
+  coreDescription: string
+  capabilities: string[]
+  targetMetric: string
+  icon: string
+  isSpecialEdition?: boolean
+  promoBadge?: string
 }
 
-function ServiceIcon({ icon }: { icon: string }) {
+function EngineIcon({ icon }: { icon: string }) {
   const commonProps = {
     viewBox: '0 0 24 24',
     fill: 'none',
@@ -25,81 +28,42 @@ function ServiceIcon({ icon }: { icon: string }) {
   }
 
   switch (icon) {
-    case 'growth':
+    case 'acquisition':
       return (
         <svg {...commonProps}>
-          <path d="M4 19h16" />
-          <path d="M6 15l4-4 3 3 5-6" />
-          <path d="M15 8h3v3" />
+          <circle cx="12" cy="12" r="9" />
+          <circle cx="12" cy="12" r="5" />
+          <circle cx="12" cy="12" r="1.5" fill="currentColor" />
         </svg>
       )
-    case 'leads':
+    case 'conversion':
       return (
         <svg {...commonProps}>
-          <circle cx="8" cy="8" r="3" />
-          <circle cx="16" cy="7" r="2.5" />
-          <path d="M3.5 19a4.5 4.5 0 0 1 9 0" />
-          <path d="M13 18a3.5 3.5 0 0 1 7 0" />
-          <path d="M12 12l2.5 2.5" />
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
         </svg>
       )
-    case 'seo':
+    case 'retention':
       return (
         <svg {...commonProps}>
-          <circle cx="10.5" cy="10.5" r="5.5" />
-          <path d="M15 15l4 4" />
-          <path d="M8.5 10.5h4" />
-          <path d="M10.5 8.5v4" />
+          <path d="M21.5 2v6h-6" />
+          <path d="M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
         </svg>
       )
-    case 'content':
+    case 'intelligence':
       return (
         <svg {...commonProps}>
-          <rect x="5" y="4" width="14" height="16" rx="2" />
-          <path d="M8 8h8" />
-          <path d="M8 12h8" />
-          <path d="M8 16h5" />
+          <line x1="18" y1="20" x2="18" y2="10" />
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+          <path d="M3 20h18" />
         </svg>
       )
-    case 'email':
+    case 'web3':
       return (
         <svg {...commonProps}>
-          <rect x="3" y="6" width="18" height="12" rx="2" />
-          <path d="M4 8l8 6 8-6" />
-        </svg>
-      )
-    case 'mobile':
-      return (
-        <svg {...commonProps}>
-          <rect x="8" y="3" width="8" height="18" rx="2" />
-          <path d="M10 6h4" />
-          <circle cx="12" cy="17" r="1" />
-        </svg>
-      )
-    case 'brand':
-      return (
-        <svg {...commonProps}>
-          <path d="M12 3l7 4v5c0 4.2-2.8 7.6-7 9-4.2-1.4-7-4.8-7-9V7l7-4Z" />
-          <path d="m9.5 12 1.7 1.7 3.3-3.4" />
-        </svg>
-      )
-    case 'professional':
-      return (
-        <svg {...commonProps}>
-          <path d="M4 20h16" />
-          <path d="M6 20V8l6-4 6 4v12" />
-          <path d="M9 12h.01" />
-          <path d="M12 12h.01" />
-          <path d="M15 12h.01" />
-        </svg>
-      )
-    case 'management':
-      return (
-        <svg {...commonProps}>
-          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-          <line x1="9" y1="9" x2="15" y2="9" />
-          <line x1="9" y1="13" x2="15" y2="13" />
-          <line x1="9" y1="17" x2="15" y2="17" />
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5" />
+          <path d="M2 12l10 5 10-5" />
         </svg>
       )
     default:
@@ -110,169 +74,93 @@ function ServiceIcon({ icon }: { icon: string }) {
 export default function Services() {
   const [openCard, setOpenCard] = useState<number | null>(0)
 
-  const services: ServiceItem[] = [
+  const engines: EngineItem[] = [
     {
-      icon: 'management',
-      title: 'Project Management',
-      subtitle:
-        'Keep your marketing campaigns on track, on time, and on budget with structured project coordination, resource management, and campaign execution.',
-      details: [
-        'We manage all aspects of your marketing projects, establishing clear timelines, milestones, and deliverables to keep creative and technical teams aligned.',
-        'From coordinating cross-functional campaigns to tracking resource allocation and campaign launch schedules, we eliminate friction and keep execution seamless.',
-        'You receive regular progress updates, comprehensive reports, and proactive solutions to ensure your marketing campaigns launch smoothly and drive results.',
+      id: 'acquisition',
+      number: '01',
+      title: 'Customer Acquisition Engine',
+      tagline: 'Drive high-intent demand and pipeline volume.',
+      coreDescription:
+        'We build systematic acquisition funnels that put your business in front of ready-to-buy prospects.',
+      capabilities: [
+        'Search Engine Optimization (SEO)',
+        'Google & Meta Performance Ads',
+        'High-Converting Landing Pages',
+        'Strategic Billboard & Out-of-Home Media',
+        'Content Marketing & Video Assets',
       ],
-      bullets: [
-        'Campaign Planning & Scheduling',
-        'Resource & Vendor Management',
-        'Milestone Tracking',
-        'Cross-functional Collaboration',
-        'Performance Reporting',
-      ],
+      targetMetric: 'Lower Customer Acquisition Cost (CAC) & Qualified Pipeline Volume.',
+      icon: 'acquisition',
     },
     {
-      icon: 'growth',
-      title: 'Billboard Advertising',
-      subtitle:
-        'Put your brand in front of thousands daily with strategic billboard placements that build visibility, trust and top-of-mind awareness in high-traffic locations.',
-      details: [
-        'We plan billboard campaigns around your audience movement patterns, selecting premium routes and hotspots where your message gets maximum exposure.',
-        'From concept and copy to design adaptation, print specifications and placement coordination, we handle end-to-end execution for a bold outdoor presence.',
-        'You get clear campaign timelines, placement proof, and performance-focused recommendations so every board supports your brand and sales goals.',
+      id: 'conversion',
+      number: '02',
+      title: 'Conversion Engine',
+      tagline: 'Turn clicks and inquiries into paying clients.',
+      coreDescription:
+        'Traffic without conversion is wasted spend. We engineer high-converting sales pathways and lead nurturing systems that turn interest into signed deals.',
+      capabilities: [
+        'Offer Design & Positioning',
+        'WhatsApp Business & Live Chat Sales Systems',
+        'CRM Setup & Lead Pipeline Automation',
+        'Multi-Step Sales Funnel Architecture',
+        'Retargeting & Remarketing Campaigns',
       ],
+      targetMetric: 'Higher Lead-to-Customer Conversion Rate.',
+      icon: 'conversion',
     },
     {
-      icon: 'leads',
-      title: 'Web3 Solutions',
-      featured: true,
-      featuredLabel: 'New Service',
-      subtitle:
-        'Launch future-ready digital products with Web3 strategy, blockchain integration and user experiences designed for trust, transparency and scalable growth.',
-      details: [
-        'We help brands and startups translate Web3 ideas into practical products, from token utility planning and wallet-enabled experiences to community-led growth models.',
-        'Our team supports your roadmap across architecture guidance, smart contract collaboration, user journey design and go-to-market communication for technical and non-technical audiences.',
-        'Whether you are building an NFT platform, DAO ecosystem or blockchain-powered service, we shape clear positioning and adoption strategies that reduce friction and increase confidence.',
+      id: 'retention',
+      number: '03',
+      title: 'Retention Engine',
+      tagline: 'Maximize customer lifetime value and repeat sales.',
+      coreDescription:
+        'The most profitable revenue comes from existing customers. We implement retention mechanics that keep your clients engaged and buying again.',
+      capabilities: [
+        'Automated Email Lifecycle Campaigns',
+        'WhatsApp VIP & Broadcast Nurture Loops',
+        'Customer Database Segmentation',
+        'Loyalty, Referral & Upsell Campaigns',
+        'Client Reactivation Sprints',
       ],
+      targetMetric: 'Increased Customer Lifetime Value (LTV) & Repeat Purchases.',
+      icon: 'retention',
     },
     {
-      icon: 'seo',
-      title: 'Search Engine Optimisation',
-      subtitle:
-        'There are 3.5 billion searches on Google daily. Clearly, consumers are turning more to search engines to help them take buying decisions.',
-      details: [
-        'Let’s help you manage your search engine optimisation projects so that your brand can feature in your prospect’s search.',
-        'We use relevant keyword research tools, optimized content and analytics to make your brand visible on the web.',
-        'Let’s help you get found online.',
+      id: 'intelligence',
+      number: '04',
+      title: 'Business & Revenue Intelligence',
+      tagline: 'Connect digital marketing directly to business economics.',
+      coreDescription:
+        'Built on professional accounting and audit expertise. We provide clear visibility into where your capital is going, which channels produce profit, and what drives cash flow.',
+      capabilities: [
+        'Marketing Analytics & Attribution',
+        'CAC, LTV & Unit Economics Tracking',
+        'Custom Executive KPI Dashboards',
+        'Revenue & Expense Leakage Analysis',
+        'Project & Campaign Management Oversight',
       ],
+      targetMetric: 'Clear Financial Visibility & Maximized Marketing ROI.',
+      icon: 'intelligence',
     },
     {
-      icon: 'content',
-      title: 'Content Marketing',
-      subtitle:
-        'Content drives all digital marketing elements. And great content added to good design can drive significant sales and engagement.',
-      details: [
-        'Our Content Marketing effort starts with a Content Marketing Strategy, followed by well-researched keywords, content development and breath-taking designs to deliver a finished product that drives conversion.',
-        'Looking to develop content to fuel your digital marketing projects?',
+      id: 'web3',
+      number: '05',
+      title: 'Web3 Services & Project Management',
+      tagline: 'Accelerate Web3 growth, tokenomics marketing, and decentralized project delivery.',
+      coreDescription:
+        'Specialized Web3 & Blockchain project management and growth strategies designed for Web3 protocols, NFT ecosystems, dApps, and decentralized communities. We are currently running a special promo for clients requiring Web3 services and Project Management.',
+      capabilities: [
+        'Web3 & Protocol Marketing Strategy',
+        'Blockchain Project & PMO Management',
+        'Discord & Telegram Community Growth',
+        'Tokenomics & Go-To-Market Execution',
+        'Web3 Partnership & Advisory Services',
       ],
-      bullets: [
-        'E-books',
-        'Whitepapers',
-        'Videos',
-        'Social Media Content',
-        'Infographics',
-        'Wikipedia Articles',
-        'Case Studies',
-        'Templates',
-        'Research Reports',
-        'Slideshare Decks',
-        'Articles',
-        'Checklists',
-      ],
-    },
-    {
-      icon: 'email',
-      title: 'Email Marketing',
-      subtitle:
-        'Several research has proven that email marketing still delivers a higher return on investment than any other digital marketing medium.',
-      details: [
-        'We develop, design and implement different email marketing campaigns for clients in line with their marketing strategy.',
-      ],
-      bullets: [
-        'E-letter',
-        'E-zine',
-        'Gauntlet email series',
-        'Refresher campaigns',
-        'Stand-alone email campaigns',
-        'E-newsletters',
-      ],
-    },
-    {
-      icon: 'mobile',
-      title: 'Mobile Marketing',
-      subtitle:
-        'Today’s consumers are mobile. They connect, engage and entertain themselves through their mobile devices.',
-      details: [
-        'Let’s help you reach your consumers through mobile marketing and develop a campaign tailored for your brand.',
-      ],
-      bullets: [
-        'WhatsApp',
-        'Targeted SMS',
-        'Live Chat',
-        'Mobile Apps',
-        'Mobile Only Websites',
-        'In-App Display Adverts',
-        'Google Mobile Platform',
-        'Location Geo targeting',
-        'After call Summary Adverts',
-      ],
-    },
-    {
-      icon: 'brand',
-      title: 'Brand Development',
-      subtitle:
-        'All products need to be developed into brands that give them a distinct identity in the minds of customers.',
-      details: [
-        'At Patorex & Associates, we help turn products, companies and people into distinguishable brands with focused strategy and execution.',
-      ],
-      bullets: [
-        'Brand Strategy Development',
-        'Brand Positioning and Key Messaging',
-        'Brand Identity Guidelines and Visuals (Logo etc.)',
-        'Employer Branding',
-        'Marketing Plan Development',
-        'Re-branding',
-        'Marketing Strategy',
-      ],
-    },
-    {
-      icon: 'content',
-      title: 'Social Media Marketing and Management',
-      subtitle:
-        'Build a strong and consistent presence across social platforms with strategy-led content, community engagement and campaign management that drives measurable growth.',
-      details: [
-        'We create platform-specific social media strategies aligned with your goals, audience behavior and brand voice to improve reach, engagement and conversions.',
-        'From monthly calendars and content production to publishing, moderation and reporting, we manage your social channels end-to-end for consistent performance.',
-        'We also run targeted social campaigns to attract qualified leads, nurture your community and turn audience attention into business outcomes.',
-      ],
-      bullets: [
-        'Social Media Strategy',
-        'Content Calendar Planning',
-        'Creative Post Design and Copywriting',
-        'Page Management and Community Engagement',
-        'Paid Social Campaign Management',
-        'Audience Growth and Lead Generation',
-        'Monthly Performance Reporting',
-        'Influencer and Partnership Coordination',
-      ],
-    },
-    {
-      icon: 'professional',
-      title: 'Professional Services Marketing',
-      subtitle:
-        'Firms that offer professional services cannot be promoted the same way product brands are promoted.',
-      details: [
-        'We have a dedicated Professional Services Marketing Team that employs an inbound marketing approach to drive growth for service firms.',
-        'If you are a law firm, medical institution, consulting firm, accounting firm, engineering firm or architectural firm, let’s discuss how we can help you attract and convert prospects into clients.',
-      ],
+      targetMetric: 'Rapid Token & Ecosystem Growth, Seamless Blockchain Execution.',
+      icon: 'web3',
+      isSpecialEdition: true,
+      promoBadge: '🔥 SPECIAL PROMO EDITION • WEB3 & PM',
     },
   ]
 
@@ -283,71 +171,146 @@ export default function Services() {
   return (
     <section id="services" className={styles.services}>
       <div className={styles.container}>
+        {/* Section Header */}
         <div className={styles.header}>
-          <div className={styles.sectionLabel}>Features</div>
-          <h2 className={styles.title}>Our Services</h2>
+          <div className={styles.sectionTag}>The Patorex Growth Framework</div>
+          <h2 className={styles.mainTitle}>
+            End-to-End Revenue Systems Built for <span className={styles.gradientText}>Measurable ROI</span>
+          </h2>
           <p className={styles.subtitle}>
-            Built to grow your brand with strategy, creativity and measurable results
+            Marketing is not just about likes or visibility; it is the engine that drives acquisition, conversion, retention, and bottom-line profit.
           </p>
         </div>
 
-        <div className={styles.grid}>
-          {services.map((service, index) => (
-            <article
-              key={service.title + index}
-              className={`${styles.serviceCard} ${service.featured ? styles.featuredCard : ''}`}
-            >
-              {service.featured && <span className={styles.featuredTag}>{service.featuredLabel || 'New'}</span>}
-              <div className={`${styles.cardGlow} ${service.featured ? styles.featuredGlow : ''}`} aria-hidden="true" />
-              <div className={styles.cardHeader}>
-                <div className={styles.cardTopRow}>
-                  <span className={styles.serviceIcon}>
-                    <ServiceIcon icon={service.icon} />
-                  </span>
-                  <span className={styles.indexBadge}>{String(index + 1).padStart(2, '0')}</span>
+        {/* 5 Core Growth Engines Grid */}
+        <div className={styles.engineGrid}>
+          {engines.map((engine, index) => {
+            const isOpen = openCard === index
+            return (
+              <article
+                key={engine.id}
+                className={`${styles.engineCard} ${
+                  engine.isSpecialEdition ? styles.specialEditionCard : ''
+                }`}
+              >
+                {/* Special Edition Glitch/Glowing Elements */}
+                {engine.isSpecialEdition && (
+                  <>
+                    <div className={styles.twitchGlowOverlay} aria-hidden="true" />
+                    <span className={`${styles.specialBadge} ${styles.glitchText}`} data-text={engine.promoBadge}>
+                      {engine.promoBadge}
+                    </span>
+                  </>
+                )}
+
+                <div className={styles.cardHeaderTop}>
+                  <div className={styles.iconContainer}>
+                    <EngineIcon icon={engine.icon} />
+                  </div>
+                  <span className={styles.numberBadge}>{engine.number}</span>
                 </div>
-                <h3>{service.title}</h3>
-              </div>
-              <p className={styles.cardDescription}>{service.subtitle}</p>
 
-              <button
-                type="button"
-                onClick={() => toggleCard(index)}
-                className={`${styles.readMoreBtn} ${service.featured ? styles.readMoreBtnFeatured : ''}`}
-                aria-expanded={openCard === index}
-                aria-controls={`service-content-${index}`}
-              >
-                {openCard === index ? 'Show Less' : 'Read More'}
-              </button>
+                <h3 className={styles.engineTitle}>
+                  {engine.title}
+                  {engine.isSpecialEdition && <span className={styles.liveIndicator}>PROMO</span>}
+                </h3>
+                <p className={styles.tagline}>{engine.tagline}</p>
+                <p className={styles.coreDescription}>{engine.coreDescription}</p>
 
-              <div
-                id={`service-content-${index}`}
-                className={`${styles.cardDropdown} ${openCard === index ? styles.cardDropdownOpen : ''}`}
-              >
-                <div className={styles.dropdownInner}>
-                  {service.details.map(detail => (
-                    <p key={detail} className={styles.dropdownText}>
-                      {detail}
-                    </p>
-                  ))}
+                {/* Dropdown / Accordion Link */}
+                <button
+                  type="button"
+                  onClick={() => toggleCard(index)}
+                  className={`${styles.accordionToggleBtn} ${
+                    engine.isSpecialEdition ? styles.specialToggleBtn : ''
+                  }`}
+                  aria-expanded={isOpen}
+                  aria-controls={`engine-delivery-${index}`}
+                >
+                  <span>{isOpen ? 'Hide Delivery Mechanisms' : 'View Delivery Mechanisms'}</span>
+                  <svg
+                    className={`${styles.chevronIcon} ${isOpen ? styles.chevronRotated : ''}`}
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                  >
+                    <path d="M6 9l6 6 6-6" />
+                  </svg>
+                </button>
 
-                  {service.bullets && (
-                    <ul className={styles.bulletList}>
-                      {service.bullets.map(item => (
-                        <li key={item}>{item}</li>
+                {/* Dropdown Content */}
+                <div
+                  id={`engine-delivery-${index}`}
+                  className={`${styles.accordionContent} ${isOpen ? styles.accordionOpen : ''}`}
+                >
+                  <div className={styles.accordionInner}>
+                    <h4 className={styles.deliveryHeading}>Delivery Capabilities:</h4>
+                    <div className={styles.capabilitiesList}>
+                      {engine.capabilities.map((cap, cIdx) => (
+                        <div key={cIdx} className={styles.capabilityPill}>
+                          <svg
+                            className={styles.checkIcon}
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3"
+                          >
+                            <polyline points="20 6 9 17 4 12" />
+                          </svg>
+                          <span>{cap}</span>
+                        </div>
                       ))}
-                    </ul>
-                  )}
+                    </div>
 
-                  <a href="https://wa.me/15813364553" target="_blank" rel="noopener noreferrer" className={styles.consultBtn}>
-                    Book a Consultation
-                  </a>
+                    {/* Outcome Metric Box */}
+                    <div className={styles.metricBox}>
+                      <div className={styles.metricHeader}>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M12 6v6l4 2" />
+                        </svg>
+                        <span>Outcome Metric Highlight</span>
+                      </div>
+                      <p className={styles.metricText}>{engine.targetMetric}</p>
+                    </div>
+
+                    <a
+                      href="https://wa.me/15813364553"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${styles.engineCtaBtn} ${
+                        engine.isSpecialEdition ? styles.specialCtaBtn : ''
+                      }`}
+                    >
+                      Deploy This Engine
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            )
+          })}
+        </div>
+
+        {/* Prominent Banner Below Engines */}
+        <div className={styles.auditBanner}>
+          <div className={styles.auditBannerContent}>
+            <div className={styles.auditIconBadge}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M9 11l3 3L22 4" />
+                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+              </svg>
+            </div>
+            <p className={styles.auditText}>
+              Not sure which engine your business needs right now?
+            </p>
+            <a href="#contact" className={styles.auditBtn}>
+              Book a Growth Audit
+            </a>
+          </div>
         </div>
       </div>
     </section>
   )
 }
+

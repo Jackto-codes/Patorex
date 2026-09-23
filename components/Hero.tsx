@@ -18,13 +18,12 @@ export default function Hero() {
       <div className={styles.container}>
         <div className={styles.content}>
           <h1 className={styles.title}>
-            Results
-            <span className={styles.highlight}>That resonate</span>
+            Revenue Infrastructure
+            <span className={styles.highlight}>& Growth Partner</span>
           </h1>
           
           <p className={styles.description}>
-            The simplest way to elevate your brand, engage audiences, and grow your business. 
-            No spreadsheets. No complexity. Just results.
+            Business Growth, Revenue Infrastructure & Marketing Intelligence. 
           </p>
           
           <div className={styles.cta}>
@@ -38,8 +37,7 @@ export default function Hero() {
           </div>
 
           <p className={styles.subtext}>
-            Free consultation • Expert guidance • Tailored solutions
-          </p>
+More leads, higher conversions, and protected cash flow—no matter the economic climate.          </p>
         </div>
       </div>
     </section>

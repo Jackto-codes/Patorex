@@ -1,9 +1,10 @@
-.pricing {
-  padding: 110px 20px;
+.pricingSection {
+  padding: 100px 20px;
   background:
-    radial-gradient(circle at 10% 8%, var(--section-glow-left), transparent 35%),
-    radial-gradient(circle at 90% 88%, var(--section-glow-right), transparent 34%),
+    radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.08), transparent 35%),
+    radial-gradient(circle at 90% 100%, rgba(14, 165, 233, 0.08), transparent 35%),
     var(--section-gradient);
+  position: relative;
 }
 
 .container {
@@ -11,259 +12,224 @@
   margin: 0 auto;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 32px;
-  align-items: start;
+.header {
+  text-align: center;
+  margin-bottom: 56px;
 }
 
-.copyBlock {
-  max-width: 760px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.kicker {
+.sectionTag {
   display: inline-block;
-  margin-bottom: 14px;
-  padding: 7px 16px;
+  padding: 8px 22px;
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: #ffffff;
   border-radius: 999px;
-  background: rgba(8, 17, 57, 0.08);
-  color: #102053;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.25);
 }
 
-.title {
-  color: #081139;
-  font-size: clamp(2.5rem, 5vw, 5.3rem);
-  line-height: 1.02;
-  letter-spacing: -0.03em;
+.mainTitle {
+  font-size: clamp(2.2rem, 3.8vw, 3.8rem);
   font-weight: 800;
-  margin: 0 0 16px;
-  min-height: 1.95em;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
 }
 
-.cursor {
-  display: inline-block;
-  margin-left: 4px;
-  color: #0f2e8f;
-  animation: cursorBlink 0.85s step-end infinite;
+.highlightText {
+  background: linear-gradient(135deg, #2563eb 0%, #0ea5e9 50%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-secondary);
   max-width: 760px;
-  margin: 0;
-  color: rgba(8, 17, 57, 0.9);
-  font-size: clamp(1.05rem, 2vw, 1.7rem);
-  line-height: 1.45;
-  font-weight: 500;
+  margin: 0 auto;
 }
 
-.actions {
-  justify-self: end;
+/* Tier Grid */
+.tierGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.tierCard {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 250, 255, 0.98));
+  border-radius: 24px;
+  border: 1px solid rgba(147, 197, 253, 0.45);
+  padding: 32px 28px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 18px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
-.contactBtn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 18px 44px;
+.tierCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 42px rgba(37, 99, 235, 0.12);
+}
+
+.featuredCard {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(239, 246, 255, 0.99));
+  border: 2px solid rgba(37, 99, 235, 0.7);
+  box-shadow: 0 20px 48px rgba(37, 99, 235, 0.18);
+  transform: scale(1.02);
+}
+
+.featuredCard:hover {
+  transform: scale(1.02) translateY(-6px);
+  box-shadow: 0 28px 56px rgba(37, 99, 235, 0.25);
+}
+
+.featuredBadge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 18px;
+  background: linear-gradient(135deg, #f97316, #fb7185);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   border-radius: 999px;
-  border: 2px solid #081139;
-  color: #081139;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.85rem;
-  background: rgba(255, 255, 255, 0.3);
-  transition: transform 0.25s ease, box-shadow 0.3s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 8px 18px rgba(249, 115, 22, 0.3);
 }
 
-.contactBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(11, 42, 143, 0.28);
-  background: #0b2a8f;
-  border-color: #0b2a8f;
-  color: #f8fbff;
+.tierTag {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--text-500);
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
-.contactBtn:active {
-  transform: translateY(0);
-  box-shadow: 0 6px 14px rgba(11, 42, 143, 0.28);
-  background: #0a2479;
-  border-color: #0a2479;
-  color: #f8fbff;
+.featuredTag {
+  color: #2563eb;
 }
 
-@media (hover: none) and (pointer: coarse) {
-  .contactBtn:active {
-    transform: scale(0.985);
-  }
+.tierName {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--text-900);
+  margin-bottom: 10px;
 }
 
-.contactNumbers {
+.tierSubtitle {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-600);
+  margin-bottom: 24px;
+}
+
+.featureBox {
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+
+.featureHeading {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-900);
+  margin-bottom: 14px;
+}
+
+.featureList {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 12px;
 }
 
-.contactNumber {
-  font-size: 1rem;
-  color: rgba(8, 17, 57, 0.78);
+.featureList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #1e293b;
+}
+
+.checkIcon {
+  width: 17px;
+  height: 17px;
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.tierCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  background: rgba(37, 99, 235, 0.08);
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
   text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  transition: color 0.25s ease;
-}
-
-.contactNumber:hover {
-  color: #0b2a8f;
-}
-
-.whatsappNumber {
   transition: all 0.25s ease;
+  text-align: center;
 }
 
-.whatsappNumber:hover {
-  color: #25d366 !important;
-  text-shadow: 0 0 8px rgba(37, 211, 102, 0.25);
+.tierCta:hover {
+  background: rgba(37, 99, 235, 0.16);
+  border-color: rgba(37, 99, 235, 0.45);
+  transform: translateY(-2px);
 }
 
-.preReveal {
-  opacity: 0;
-  transform: translateY(26px);
+.featuredCta {
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.3);
 }
 
-.fadeIn {
-  opacity: 0;
-  transform: translateY(26px);
-  animation: fadeInUp 900ms cubic-bezier(0.2, 0.65, 0.25, 1) forwards;
+.featuredCta:hover {
+  background: linear-gradient(135deg, #1d4ed8, #0284c7);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.42);
 }
 
-@keyframes cursorBlink {
-  0%,
-  45% {
-    opacity: 1;
-  }
-  50%,
-  100% {
-    opacity: 0;
-  }
-}
-
-.delay1 {
-  animation-delay: 260ms;
-}
-
-.delay2 {
-  animation-delay: 520ms;
-}
-
-.delay3 {
-  animation-delay: 760ms;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(26px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 1024px) {
-  .pricing {
-    padding: 92px 20px;
-  }
-
-  .content {
+@media (max-width: 992px) {
+  .tierGrid {
     grid-template-columns: 1fr;
-    gap: 34px;
+    gap: 24px;
   }
 
-  .actions {
-    justify-self: start;
-    align-items: flex-start;
+  .featuredCard {
+    transform: none;
   }
 
-  .contactBtn {
-    font-size: 1.45rem;
-    padding: 16px 36px;
-  }
-
-  .contactNumber {
-    font-size: 0.95rem;
+  .featuredCard:hover {
+    transform: translateY(-6px);
   }
 }
 
 @media (max-width: 640px) {
-  .pricing {
-    padding: 74px 16px;
+  .pricingSection {
+    padding: 70px 16px;
   }
 
-  .kicker {
-    font-size: 11px;
-    padding: 6px 13px;
-    margin-bottom: 12px;
+  .tierCard {
+    padding: 24px;
   }
 
-  .title {
-    line-height: 1.01;
-    margin-bottom: 18px;
-    min-height: 2.3em;
-  }
-
-  .subtitle {
-    font-size: 1.05rem;
-  }
-
-  .actions {
-    gap: 12px;
-  }
-
-  .contactBtn {
-    width: 100%;
-    justify-content: center;
-    font-size: 1.12rem;
-    padding: 14px 24px;
-  }
-
-  .contactNumbers {
-    width: 100%;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .contactNumber {
-    font-size: 0.95rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .preReveal,
-  .fadeIn {
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-
-  .cursor {
-    animation: none;
-  }
-
-  .contactBtn,
-  .contactNumber {
-    transition: none;
+  .tierName {
+    font-size: 22px;
   }
 }

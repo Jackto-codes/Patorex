@@ -119,6 +119,38 @@
 	line-height: 1.4;
 }
 
+.emailContainer {
+	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.emailLabel {
+	font-size: 13px;
+	font-weight: 700;
+	color: var(--text-500);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.emailLink {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 16px;
+	font-weight: 800;
+	color: var(--primary);
+	text-decoration: none;
+	transition: color 0.2s ease, transform 0.2s ease;
+	width: fit-content;
+}
+
+.emailLink:hover {
+	color: var(--primary-dark);
+	transform: translateX(3px);
+}
+
 .ctaBtn {
 	display: inline-block;
 	margin-top: 12px;
