@@ -95,7 +95,7 @@ export default function Navbar() {
               className={styles.logoImg}
             />
           </div>
-          <span className={styles.logoText}>Patorex</span>
+          <span className={styles.logoText}>Patorex &amp; Associates</span>
         </div>
 
         <button

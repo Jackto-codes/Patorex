@@ -8,10 +8,10 @@ export default function PromoModal() {
   const [timeLeft, setTimeLeft] = useState(8)
 
   useEffect(() => {
-    // Show promo modal 1.8 seconds after site entrance (after opening preloader finishes)
+    // Show promo modal shortly after opening preloader finishes (6.6 seconds)
     const showTimer = setTimeout(() => {
       setIsOpen(true)
-    }, 1800)
+    }, 6600)
 
     return () => clearTimeout(showTimer)
   }, [])

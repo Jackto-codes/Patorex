@@ -144,10 +144,11 @@
 }
 
 .logoText {
-  font-size: 26px;
+  font-size: clamp(18px, 2.2vw, 24px);
   font-weight: 800;
   color: var(--text-900);
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .mobileToggle {

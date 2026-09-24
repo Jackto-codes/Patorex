@@ -12,16 +12,16 @@ export default function Preloader() {
 
     const timer1 = setTimeout(() => {
       setStage('resonate')
-    }, 400)
+    }, 1800)
 
     const timer2 = setTimeout(() => {
       setStage('exiting')
-    }, 1100)
+    }, 5400)
 
     const timer3 = setTimeout(() => {
       setStage('done')
       document.body.style.overflow = ''
-    }, 1500)
+    }, 6000)
 
     return () => {
       clearTimeout(timer1)
